@@ -1,4 +1,4 @@
-import{i as e}from"./preload-helper-BdFrVu1K.js";import{t}from"./jsx-runtime-f3rHp9ZU.js";import{a as n,c as r,d as i,f as a,i as o,l as s,n as c,o as l,r as u,s as d,t as f,u as p}from"./icon-DQzpY8_x.js";import{n as m,t as h}from"./heading-CtZNTp3G.js";var g,_,v,y,b,x,S,C,w,T,E,D,O,k,A,j,M,N;e((()=>{m(),c(),d(),g=t(),_={title:`Components (Draft)/Icons`,tags:[`autodocs`],component:f,parameters:{docs:{description:{component:`
+import{i as e}from"./preload-helper-BdFrVu1K.js";import{t}from"./jsx-runtime-f3rHp9ZU.js";import{a as n,c as r,d as i,f as a,i as o,l as s,n as c,o as l,r as u,s as d,t as f,u as p}from"./icon-DQzpY8_x.js";import{n as m,t as h}from"./heading-Q3xdSld3.js";var g,_,v,y,b,x,S,C,w,T,E,D,O,k,A,j,M,N;e((()=>{m(),c(),d(),g=t(),_={title:`Components (Draft)/Icons`,tags:[`autodocs`],component:f,parameters:{docs:{description:{component:`
 ### CFPB DS Icon component
 
 Source: https://cfpb.github.io/design-system/foundation/iconography
