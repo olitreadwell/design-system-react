@@ -29,5 +29,5 @@ export interface TableProperties {
  *
  * Source: https://cfpb.github.io/design-system/components/tables
  */
-export declare const Table: import('../../../node_modules/react').ForwardRefExoticComponent<Omit<HTMLProps<HTMLTableElement> & TableProperties, "ref"> & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
+export declare const Table: import('../../../node_modules/react').ForwardRefExoticComponent<Omit<Omit<HTMLProps<HTMLTableElement>, "rows"> & TableProperties, "ref"> & import('../../../node_modules/react').RefAttributes<HTMLDivElement>>;
 export default Table;

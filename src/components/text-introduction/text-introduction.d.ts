@@ -1,4 +1,4 @@
-import { JSX, HTMLProps, ReactNode } from '../../../node_modules/react';
+import { FC, HTMLProps, JSX, ReactNode } from '../../../node_modules/react';
 interface TextIntroductionProperties extends HTMLProps<HTMLDivElement> {
     heading: string;
     subheading: string;
@@ -12,16 +12,20 @@ interface TextIntroductionProperties extends HTMLProps<HTMLDivElement> {
  */
 export declare const TextIntroduction: {
     ({ heading, subheading, description, callToAction, className, ...properties }: TextIntroductionProperties): JSX.Element;
-    Container({ className, children, ...properties }: HTMLProps<HTMLDivElement>): JSX.Element;
-    Heading({ children, }: TextIntroductionSubProperties): JSX.Element;
-    Description({ children, }: TextIntroductionSubProperties): ReactNode;
-    Subheading({ children, }: TextIntroductionSubProperties): JSX.Element;
+    Container: FC<HTMLProps<HTMLDivElement>>;
+    Heading: FC<TextIntroductionSubProperties>;
+    Description: FC<TextIntroductionSubProperties>;
+    Subheading: FC<TextIntroductionSubProperties>;
 };
-export declare const TextIntroductionContainer: ({ className, children, ...properties }: HTMLProps<HTMLDivElement>) => JSX.Element;
 interface TextIntroductionSubProperties {
     children: ReactNode;
 }
-export declare const TextIntroductionHeading: ({ children, }: TextIntroductionSubProperties) => JSX.Element;
-export declare const TextIntroductionDescription: ({ children, }: TextIntroductionSubProperties) => ReactNode;
-export declare const TextIntroductionSubheading: ({ children, }: TextIntroductionSubProperties) => JSX.Element;
+declare const TextIntroductionContainer: FC<HTMLProps<HTMLDivElement>>;
+export { TextIntroductionContainer };
+declare const TextIntroductionHeading: FC<TextIntroductionSubProperties>;
+export { TextIntroductionHeading };
+declare const TextIntroductionDescription: FC<TextIntroductionSubProperties>;
+export { TextIntroductionDescription };
+declare const TextIntroductionSubheading: FC<TextIntroductionSubProperties>;
+export { TextIntroductionSubheading };
 export default TextIntroduction;

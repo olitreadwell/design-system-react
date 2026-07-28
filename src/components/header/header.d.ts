@@ -1,7 +1,7 @@
-import { JSX } from '../../../node_modules/react';
+import { ReactNode, JSX } from '../../../node_modules/react';
 import { LogoLanguage } from './logo';
 export interface HeaderProperties {
-    links?: JSX.Element[];
+    links?: ReactNode[];
     href?: string;
     lang?: LogoLanguage;
 }

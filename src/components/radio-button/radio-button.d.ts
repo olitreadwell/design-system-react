@@ -1,10 +1,10 @@
-import { ReactElement, ReactNode, RefObject, JSX } from '../../../node_modules/react';
+import { ReactElement, ReactNode, Ref, JSX } from '../../../node_modules/react';
 interface RadioProperties {
     id: string;
     label: ReactNode;
     className?: string;
     helperText?: string;
-    inputRef?: RefObject<HTMLInputElement> | string | ((instance: HTMLInputElement | null) => void) | null | undefined;
+    inputRef?: Ref<HTMLInputElement>;
     disabled?: boolean;
     isLarge?: boolean;
     name?: string;
