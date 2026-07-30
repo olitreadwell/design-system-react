@@ -35,6 +35,7 @@ interface WebsiteFooterProperties extends HTMLProps<HTMLElement> {
   linksCol1?: JSX.Element[];
   linksCol2?: JSX.Element[];
   linksCol3?: JSX.Element[];
+  hasTagline?: boolean;
 }
 
 /**
@@ -47,6 +48,7 @@ export function WebsiteFooter({
   linksCol2 = [],
   linksCol3 = [],
   className,
+  hasTagline = true,
   ...properties
 }: WebsiteFooterProperties): JSX.Element {
   return (
@@ -65,7 +67,7 @@ export function WebsiteFooter({
       <div className='o-footer__middle-right'>
         <FooterLinksColumn>{linksCol3}</FooterLinksColumn>
       </div>
-      <FooterBanner />
+      {hasTagline ? <FooterBanner /> : null}
     </Footer>
   );
 }
@@ -73,6 +75,7 @@ export function WebsiteFooter({
 interface AppFooterProperties extends HTMLProps<HTMLElement> {
   footerContent?: JSX.Element | string;
   navLinks?: JSX.Element[];
+  hasTagline?: boolean;
 }
 
 /**
@@ -83,6 +86,7 @@ interface AppFooterProperties extends HTMLProps<HTMLElement> {
 export function AppFooter({
   footerContent,
   navLinks = [],
+  hasTagline = true,
   className,
   ...properties
 }: AppFooterProperties): JSX.Element {
@@ -97,7 +101,7 @@ export function AppFooter({
           <FooterLinksColumn>{navLinks}</FooterLinksColumn>
         </div>
       </div>
-      <FooterBanner />
+      {hasTagline ? <FooterBanner /> : null}
     </Footer>
   );
 }

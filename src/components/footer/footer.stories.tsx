@@ -58,3 +58,36 @@ export const App: Story = {
     },
   },
 };
+
+export const AppFooterWithoutTagline: Story = {
+  name: 'Without tagline',
+  render: () => (
+    <AppFooter
+      hasTagline={false}
+      navLinks={[
+        <Link label='Link 1' key='link_1' to='#' />,
+        <Link label='Longer link 2' key='link_2' to='#' />,
+      ]}
+      footerContent={
+        <>
+          <Heading type='3'>Heading</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </Paragraph>
+          <Link to='#'>Link</Link>
+        </>
+      }
+    />
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Application and Website footer can be configured not to include the CFPB tagline..',
+      },
+    },
+  },
+};

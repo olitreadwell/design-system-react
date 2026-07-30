@@ -146,4 +146,25 @@ describe('AppFooter', () => {
     const backToTop = screen.getByTestId('back-to-top');
     expect(backToTop).toBeInTheDocument();
   });
+
+  it('Renders without tagline', () => {
+    const navLinks = [
+      <a href='/' className='link1' key='link1'>
+        Link 1
+      </a>,
+    ];
+    const content = <h3>About this app</h3>;
+    render(
+      <AppFooter
+        navLinks={navLinks}
+        footerContent={content}
+        hasTagline={false}
+      />,
+    );
+
+    // Tagline not rendered
+    const tagline = screen.queryByTestId('footer-tagline');
+    expect(tagline).not.toBeInTheDocument();
+  });
 });
+
