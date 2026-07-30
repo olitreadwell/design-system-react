@@ -36,12 +36,20 @@
   }
 
   // Invert fills; inactive keep default link styles but show a full border.
+  // Overlap adjacent borders so neighbors share a single 1px divider.
   &--inverted {
     button.tab {
       background: var(--gray-5);
       border-color: var(--gray-40);
+      margin-left: -1px;
+
+      &:first-child {
+        margin-left: 0;
+      }
 
       &--active {
+        position: relative;
+        z-index: 1;
         background: var(--white);
         border-bottom-color: transparent;
       }
