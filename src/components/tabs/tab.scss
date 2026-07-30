@@ -47,6 +47,14 @@
         margin-left: 0;
       }
 
+      // Raise focused tab above neighbors and keep the outline outside the
+      // shared border so the ring isn’t clipped or drawn on top of gray-40.
+      &:focus-visible {
+        position: relative;
+        z-index: 2;
+        outline-offset: 2px;
+      }
+
       &--active {
         position: relative;
         z-index: 1;
