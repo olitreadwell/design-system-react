@@ -1,7 +1,9 @@
-// 1:1 with consumerfinance.gov cfgov/unprocessed/css/organisms/secondary-nav.scss
+// Aligned with consumerfinance.gov cfgov/unprocessed/css/organisms/secondary-nav.scss.
 // Units: px values in cfgov source are converted via math.div(..., $base-font-size-px)
 // to em (padding, parent link size) or rem (header label). Compiled cf.gov CSS shows e.g.
 // .875rem crumbs elsewhere; secondary-nav uses 1rem label, 1.125em parent links, 0.625em/0.9375em header padding.
+// Mobile bleed no longer uses negative margins — cf.gov dropped those when secondary nav
+// moved into `u-layout-grid__secondary-nav`. Keep React-only collapse via aria-expanded.
 // @see https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/unprocessed/css/organisms/secondary-nav.scss
 @use 'sass:math';
 @use '@cfpb/cfpb-design-system/src/abstracts' as *;
@@ -193,14 +195,13 @@
   @include respond-to-max($bp-sm-max) {
     background: var(--gray-5);
     border-bottom: 1px solid var(--gray-40);
-    margin-left: -0.9375rem;
-    margin-right: -0.9375rem;
 
     // Add drop-shadow.
     box-shadow: 0 5px 5px rgb(0, 0, 0, 20%);
 
-    // cfgov initializes FlyoutMenu + MaxHeightTransition in SecondaryNav.js.
-    // Collapse content from header state when that JS is not running.
+    // cfgov uses FlyoutMenu + MaxHeightTransition in SecondaryNav.js, plus
+    // `--no-children` / `data-nav-is-active` for mobile filtering. DSR collapses
+    // from `aria-expanded` on the header instead (no FlyoutMenu JS).
     &__header[aria-expanded='false'] ~ &__content {
       display: none;
     }
