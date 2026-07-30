@@ -61,14 +61,22 @@ export const Tab = ({
 export interface TabListProperties extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: ReactNode;
+  /**
+   * Invert tab backgrounds: inactive tabs use the default gray fill,
+   * active tab uses white. Link colors and other chrome are unchanged.
+   */
+  isInverted?: boolean;
 }
 
 export const TabList = ({
   className,
   children,
+  isInverted = false,
   ...properties
 }: TabListProperties): JSXElement => {
-  const cname = classnames('tablist', className);
+  const cname = classnames('tablist', className, {
+    'tablist--inverted': isInverted,
+  });
 
   return (
     <div role='tablist' className={cname} {...properties}>

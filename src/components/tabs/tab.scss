@@ -34,6 +34,17 @@
       border-bottom-color: transparent;
     }
   }
+
+  // Background-only invert: inactive keep default link styles.
+  &--inverted {
+    button.tab {
+      background: var(--gray-5);
+
+      &--active {
+        background: var(--white);
+      }
+    }
+  }
 }
 
 .tab-panel {
