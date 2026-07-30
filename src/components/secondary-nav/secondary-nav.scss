@@ -2,9 +2,11 @@
 // Units: px values in cfgov source are converted via math.div(..., $base-font-size-px)
 // to em (padding, parent link size) or rem (header label). Compiled cf.gov CSS shows e.g.
 // .875rem crumbs elsewhere; secondary-nav uses 1rem label, 1.125em parent links, 0.625em/0.9375em header padding.
-// Mobile bleed no longer uses negative margins — cf.gov dropped those when secondary nav
-// moved into `u-layout-grid__secondary-nav`. Keep React-only collapse via aria-expanded.
+// Organism is margin-neutral on mobile (cf.gov). Do not reintroduce negative side margins here —
+// they overshoot DSR’s `.wrapper` / `.content__sidebar` stack. Consumers wanting the mobile bar
+// to span the content column should use `Layout.Sidebar flushAllOnSmall`.
 // @see https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/unprocessed/css/organisms/secondary-nav.scss
+// @see https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/unprocessed/css/enhancements/layout-1-3.scss
 @use 'sass:math';
 @use '@cfpb/cfpb-design-system/src/abstracts' as *;
 @use '@cfpb/cfpb-design-system/src/utilities/index.scss' as *;
