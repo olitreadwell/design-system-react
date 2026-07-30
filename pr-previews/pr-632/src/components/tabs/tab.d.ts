@@ -28,8 +28,8 @@ export interface TabListProperties extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children?: ReactNode;
     /**
-     * Invert tab backgrounds: inactive tabs use the default gray fill,
-     * active tab uses white. Link colors and other chrome are unchanged.
+     * Render tabs without fills. Same chrome as default tabs (active border,
+     * inactive link styles), but transparent backgrounds on every tab.
      */
     isInverted?: boolean;
 }
