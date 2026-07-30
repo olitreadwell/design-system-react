@@ -60,6 +60,6 @@ export const Default: Story = {
 };
 
 export const Inverted: Story = {
-  name: 'Tabs (no background)',
+  name: 'Tabs (inverted backgrounds)',
   render: () => <TabsDemo isInverted />,
 };
