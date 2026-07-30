@@ -35,13 +35,24 @@
     }
   }
 
-  // Like default tabs, but with no tab fills.
+  // Like default tabs, but with no tab fills. Mask the tablist rule under the
+  // active tab so it still opens into the panel without a bottom border.
   &--inverted {
     button.tab {
       background: transparent;
 
       &--active {
+        position: relative;
         background: transparent;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset-inline: 0;
+          bottom: -1px;
+          height: 1px;
+          background: var(--white);
+        }
       }
     }
   }
