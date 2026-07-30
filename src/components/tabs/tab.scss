@@ -35,13 +35,15 @@
     }
   }
 
-  // Background-only invert: inactive keep default link styles.
+  // Invert fills; inactive keep default link styles but show a full border.
   &--inverted {
     button.tab {
       background: var(--gray-5);
+      border-color: var(--gray-40);
 
       &--active {
         background: var(--white);
+        border-bottom-color: transparent;
       }
     }
   }
