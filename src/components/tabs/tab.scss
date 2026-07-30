@@ -37,13 +37,17 @@
 
   // Like default tabs, but with no tab fills. Mask the tablist rule under the
   // active tab so it still opens into the panel without a bottom border.
+  // Use background-color + !important so DS `.a-btn` / default `.tab--active`
+  // fills cannot win on equal specificity in app bundles.
   &--inverted {
     button.tab {
-      background: transparent;
+      background-color: transparent !important;
+      background-image: none !important;
 
       &--active {
         position: relative;
-        background: transparent;
+        background-color: transparent !important;
+        background-image: none !important;
 
         &::after {
           content: '';
