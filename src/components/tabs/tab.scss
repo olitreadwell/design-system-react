@@ -21,8 +21,10 @@
       outline: none;
     }
 
+    // Keep the focus ring outside the tab border so overlapping neighbor
+    // borders (same issue as footer links at mobile width) don’t clip it.
     &:focus-visible {
-      outline-offset: -1px;
+      outline-offset: 2px;
     }
 
     &--active {
