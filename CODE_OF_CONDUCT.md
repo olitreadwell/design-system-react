@@ -107,8 +107,8 @@ For more information about the CFPB’s equal employment opportunity (EEO) polic
 
 The CFPB is greatly appreciative of the multiple sources that we drew from to build this Code of Conduct, including:
 
-- [The Technology Transformation Services (TTS) Code of Conduct](https://18f.gsa.gov/code-of-conduct/)
+- [The Technology Transformation Services (TTS) Code of Conduct](https://web.archive.org/web/20250301150649/https://18f.gsa.gov/code-of-conduct/)
 - [The Contributor Covenant](https://www.contributor-covenant.org/)
 - [Code for America Code of Conduct](https://github.com/codeforamerica/codeofconduct)
-- [Ada Initiative: HOWTO design a code of conduct for your community](https://adainitiative.org/2014/02/18/howto-design-a-code-of-conduct-for-your-community/)
+- [Ada Initiative: HOWTO design a code of conduct for your community](https://web.archive.org/web/20210813142212/https://adainitiative.org/2014/02/18/howto-design-a-code-of-conduct-for-your-community/)
 - [Geek Feminism Code of Conduct](https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/)
