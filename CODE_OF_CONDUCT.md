@@ -97,7 +97,7 @@ For help filing a complaint about discrimination on the basis of uniformed statu
 the [Veterans’ Employment and Training Service (VETS)](https://www.dol.gov/vets/) at the Department of Labor, the [Merit Systems Protection Board](https://www.mspb.gov/), or the [Office of Special Counsel](https://osc.gov/), depending on the circumstances.
 
 For help filing a complaint about discrimination on the basis of membership in a labor organization,
-you may contact the [Federal Labor Relations Authority](https://flra.gov/) or your union (if applicable).
+you may contact the [Federal Labor Relations Authority](https://www.flra.gov/) or your union (if applicable).
 
 ### Equal employment opportunity policy
 
