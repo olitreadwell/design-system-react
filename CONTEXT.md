@@ -27,7 +27,8 @@
 - `2026-08-24` issue #620 footer back-to-top — outcome pr-opened (fork PR #5, later promoted upstream and merged) — lesson: footer fix already upstream.
 
 ## Mined gaps (discovered, not yet attempted)
-- `2026-09-09` footer.scss comments: `overriden` -> `overridden` (3 occurrences) — status: attempted (this run).
-- `2026-09-09` use-pagination.test.tsx: test description "Returns returns" -> "Returns" — status: attempted (this run).
-- `2026-09-09` select-utilities.tsx comments: `it's` -> `its` and `an SelectOption` -> `a SelectOption` — status: attempted (this run).
-- `2026-09-09` text-area.tsx JSDoc: stale anchor `#text-area-input-1` -> `#text-area-input` (verified page has `id="text-area-input"`) — status: attempted (this run).
+- `2026-09-09` footer.scss comments: `overriden` -> `overridden` (3 occurrences) — status: attempted (pr-opened #7).
+- `2026-09-09` use-pagination.test.tsx: test description "Returns returns" -> "Returns" — status: attempted (pr-opened #7).
+- `2026-09-09` select-utilities.tsx comments: `it's` -> `its` and `an SelectOption` -> `a SelectOption` — status: attempted (pr-opened #7).
+- `2026-09-09` text-area.tsx JSDoc: stale anchor `#text-area-input-1` -> `#text-area-input` (verified page has `id="text-area-input"`) — status: attempted (pr-opened #7).
+- `2026-09-09` trivial cleanup pass (footer.scss overriden, use-pagination Returns returns, select-utilities it's/an, text-area stale anchor) — outcome pr-opened (fork PR #7) — lesson: 5 genuine fixes across 4 files; fork CI React+deploy-preview green, Visual-Regression red = missing CHROMATIC_PROJECT_TOKEN (fork artifact).
