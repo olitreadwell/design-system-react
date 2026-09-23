@@ -74,7 +74,7 @@ interface IconProperties extends Omit<SVGProps<SVGSVGElement>, 'name'> {
  * @param ariaDescribedby ID of element that describes the SVG for accessibility
  * @param isPresentational Is SVG purely presentational and should be ignored by screen readers?
  * @param hasBg With background?
- * @param size Match the icon size to a specified HTML element or provide a custom size. By default the icon size is determined by it's parent element's font-size.
+ * @param size Match the icon size to a specified HTML element or provide a custom size. By default the icon size is determined by its parent element's font-size.
  * @returns JSXElement
  */
 export const Icon = ({
