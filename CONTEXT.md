@@ -1,5 +1,5 @@
 # cfpb/design-system-react context
-> refreshed 2026-09-09 | upstream default: main @ c52fe15873ae3c6e0f3c9d43ed0e36ecb1041eb9
+> refreshed 2026-09-24 | upstream default: main @ 46fd4a43fd5a185fdc956a636e84249d0b96cdb0
 
 ## Identity & policies
 - upstream: cfpb/design-system-react, default branch `main`, primary language TypeScript, English-first (US English; README/CONTRIBUTING/docs all US spelling).
@@ -26,6 +26,7 @@
 - `2026-08-05` self-found gap (Introduction.mdx `it's`->`its` + 3 dead links in CODE_OF_CONDUCT.md) — outcome pr-opened-substantive (fork PR #1, CLOSED unmerged) — lesson: those fixes are already proposed; do NOT re-pick. New occurrences of the same typo in OTHER files are fair game.
 - `2026-08-24` issue #620 footer back-to-top — outcome pr-opened (fork PR #5, later promoted upstream and merged) — lesson: footer fix already upstream.
 
+- `2026-09-24` self-found trivial cleanup pass (README tests-file link label `buttons.test.tsx`->`button.test.tsx`; checkbox.test.tsx `Accessbility`->`Accessibility`; icon.tsx JSDoc `it's parent`->`its parent`; width-percent.ts dead utilities link) — outcome pr-opened (fork PR #11) — lesson: 4 genuine fixes across 4 files; fork CI React+deploy-preview green, Visual-Regression red = missing CHROMATIC_PROJECT_TOKEN (fork artifact).
 ## Mined gaps (discovered, not yet attempted)
 - `2026-09-09` footer.scss comments: `overriden` -> `overridden` (3 occurrences) — status: attempted (pr-opened #7).
 - `2026-09-09` use-pagination.test.tsx: test description "Returns returns" -> "Returns" — status: attempted (pr-opened #7).
