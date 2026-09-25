@@ -88,6 +88,9 @@ export default function ResponsiveMenu({
     (event: KeyboardEvent<HTMLDivElement>) => {
       if (event.key === 'Escape') {
         setIsMenuOpen(false);
+      } else if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        setIsMenuOpen(false);
       }
     },
     [],
