@@ -1,6 +1,6 @@
 /**
  * Values pulled from cfpb-core width utilities
- * https://github.com/cfpb/design-system/blob/main/packages/cfpb-core/src/utilities.scss#L328-L386
+ * https://github.com/cfpb/design-system/blob/main/packages/cfpb-design-system/src/utilities/utilities.scss#L189-L230
  */
 export type WidthPercent =
   | '10'
