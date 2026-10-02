@@ -188,7 +188,7 @@ export const ColumnConfig: Story = {
         story:
           'Columns accept objects with `header`, `isAlignRight`, `width` (percent as string), `isCellWordBreak`, `isCellDisableWordWrap`, and `isHeaderWordWrap`.\n\n' +
           'Column `width` maps to the CFPB Design System width utility classes (u-w{n}pct). Valid values for width are 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 75, 65, 25, 15, 66, and 33.\n\n' +
-          'Source: https://cfpb.github.io/design-system/development/helper-classes-and-mixins#width-utilities-helper-classes',
+          'Source: https://cfpb.github.io/design-system/development/helper-classes-and-mixins#helper-classes',
       },
     },
   },

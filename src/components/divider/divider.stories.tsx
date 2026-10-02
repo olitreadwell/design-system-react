@@ -11,8 +11,8 @@ const meta: Meta<typeof Divider> = {
         component: `
 Dividers create visual separation between content sections by rendering a horizontal line.
 
-<a href="https://cfpb.github.io/design-system/development/blocks#content-dividers">
-https://cfpb.github.io/design-system/development/blocks#content-dividers
+<a href="https://cfpb.github.io/design-system/development/blocks#types">
+https://cfpb.github.io/design-system/development/blocks#types
 </a>
 `,
       },
