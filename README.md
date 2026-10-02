@@ -155,10 +155,10 @@ Still not every DS module (for example cards). Pattern B apps get remaining DS c
 
 Built from [`src/assets/styles/dsr-styles.ts`](src/assets/styles/dsr-styles.ts):
 
-| Area                                                                                                                      | Notes                                                                |
-| ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `Tab` / `TabList` / `TabPanel`                                                                                            | DSR-only until Tabs land in `cfpb-design-system`                     |
-| banner, breadcrumb, fieldset, footer, grid, header, hero, layout, link, secondary-nav, skip-nav, table, text-input        | React-authored overrides / chrome not shipped by DS `dist/index.css` |
+| Area                                                                                                               | Notes                                                                |
+| ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| `Tab` / `TabList` / `TabPanel`                                                                                     | DSR-only until Tabs land in `cfpb-design-system`                     |
+| banner, breadcrumb, fieldset, footer, grid, header, hero, layout, link, secondary-nav, skip-nav, table, text-input | React-authored overrides / chrome not shipped by DS `dist/index.css` |
 
 ### Other options (advanced)
 
@@ -209,7 +209,7 @@ import '../src/assets/styles/entry-styles';
 
 When a component uses Design System class names (for example `.a-btn`, `.m-form-field`), add the matching DS SCSS import to [`ds-components.ts`](src/assets/styles/ds-components.ts). Do not import DS styles from individual component files — the barrel keeps the list in one place.
 
-**Stories** should import components from their source files (for example `./button`, `../Link/link`), not from `~/src/index`. ESLint enforces this on `*.stories.*` (`no-restricted-imports`). **MDX** overview pages should follow the same rule (not linted — our ESLint setup does not parse MDX reliably).
+**Stories** should import components from their source files (for example `./button`, `../link/link`), not from `~/src/index`. ESLint enforces this on `*.stories.*` (`no-restricted-imports`). **MDX** overview pages should follow the same rule (not linted — our ESLint setup does not parse MDX reliably).
 
 Per-component `.scss` files (for example `banner.scss`, `link.scss`) still load when that component is imported. Storybook-only canvas tweaks live in [`.storybook/preview-head.html`](.storybook/preview-head.html).
 
@@ -243,11 +243,11 @@ This project uses Yarn 4 with the `node-modules` linker (see `.yarnrc.yml`).
 
 Edit the files in `src/components/` and your browser should hot reload your changes.
 
-Add tests to files called `<component-name>.test.tsx`. See [`buttons.test.tsx`](/src/components/buttons/button.test.tsx) for an example.
+Add tests to files called `<component-name>.test.tsx`. See [`button.test.tsx`](/src/components/buttons/button.test.tsx) for an example.
 
 Run `yarn test` to watch for changes and run tests automatically.
 
-[Github actions](https://github.com/rossjrw/pr-preview-action) will build and deploy a preview of any pull requests you open.
+[GitHub Actions](https://github.com/rossjrw/pr-preview-action) will build and deploy a preview of any pull requests you open.
 
 ## Integrating changes to the CFPB Design System
 
