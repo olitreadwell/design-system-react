@@ -113,4 +113,42 @@ describe('<SelectMulti />', () => {
     expect(NoButtons.length).toBe(0);
     expect(onChange).toHaveBeenCalledWith([]);
   });
+
+  it('Does not loop when the parent re-renders from an inline options array', () => {
+    const onChange = fn();
+    let calls = 0;
+
+    const ControlledMulti = (): JSX.Element => {
+      const [, setSelected] = useState<SelectOption[]>([]);
+
+      const handleChange = (
+        selected: SelectOption | SelectOption[] | undefined,
+      ): void => {
+        // Hard stop so a regression fails fast instead of looping forever.
+        calls += 1;
+        if (calls > 5) throw new Error('onChange called too many times');
+
+        onChange(selected);
+        if (Array.isArray(selected)) setSelected(selected);
+      };
+
+      return (
+        <Select
+          id='controlled-multi'
+          label='ControlledMulti'
+          isMulti
+          onChange={handleChange}
+          options={MultipleSelectOptions.map((option) => ({ ...option }))}
+        />
+      );
+    };
+
+    render(<ControlledMulti />);
+
+    // The parent stores the reported selection and re-renders, handing the
+    // child brand-new `options` and `onChange` references. That must not
+    // re-trigger the notification effect (previously an infinite render loop).
+    expect(calls).toBe(1);
+    expect(onChange).toHaveBeenCalledWith([]);
+  });
 });
