@@ -34,7 +34,7 @@ import type { ReactElement } from 'react';
 export default function SomePage(): ReactElement {
   return (
     <main>
-      <Alert message='2025-Q1 Quarterly filing period is open' type='success'>
+      <Alert message='2025-Q1 Quarterly filing period is open' status='success'>
         Submissions of 2025-Q1 SBL data will be accepted through May 2025.
       </Alert>
       <Button onClick={async () => login()} label='Log in' />
