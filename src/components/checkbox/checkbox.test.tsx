@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { act, render, screen } from '@testing-library/react';
+import { createRef } from 'react';
 import { Checkbox } from './checkbox';
 import { CheckboxTestWrapper } from './checkbox.utilities';
 
@@ -121,5 +122,32 @@ describe('Checkbox', () => {
 
     const checkbox = screen.getByTestId(inputTestId);
     expect(checkbox).toHaveAttribute(attributeAria, 'mixed');
+  });
+
+  it('forwards a ref to the underlying input element', () => {
+    const ref = createRef<HTMLInputElement>();
+
+    render(<Checkbox {...defaultProps} ref={ref} />);
+
+    const checkbox = screen.getByTestId(inputTestId);
+    expect(ref.current).toBeInstanceOf(HTMLInputElement);
+    expect(ref.current).toBe(checkbox);
+  });
+
+  it('calls a function ref with the underlying input element', () => {
+    const ref = vi.fn();
+
+    render(<Checkbox {...defaultProps} ref={ref} />);
+
+    const checkbox = screen.getByTestId(inputTestId);
+    expect(ref).toHaveBeenCalledWith(checkbox);
+  });
+
+  it('still attaches the legacy inputRef prop to the input element', () => {
+    const inputRef = createRef<HTMLInputElement>();
+
+    render(<Checkbox {...defaultProps} inputRef={inputRef} />);
+
+    expect(inputRef.current).toBe(screen.getByTestId(inputTestId));
   });
 });
