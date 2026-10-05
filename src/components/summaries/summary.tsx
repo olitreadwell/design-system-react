@@ -18,7 +18,7 @@ export interface SummaryProperties extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Summary components hides content over a certain height. When the hidden content is shown it can’t be reverted to the summary until the page is reloaded.
+ * Summary components hide content over a certain height. When the hidden content is shown it can’t be reverted to the summary until the page is reloaded.
  *
  * Source: <a href='https://cfpb.github.io/design-system/components/summaries' target='_blank'>https://cfpb.github.io/design-system/components/summaries</a>
  */

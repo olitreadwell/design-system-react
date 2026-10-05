@@ -4,7 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Expandable } from './expandable';
 
-const header = 'Tuesday Rememberance';
+const header = 'Tuesday Remembrance';
 const children = 'It was a warm Spring morning in the midwest...';
 
 describe('<Expandable />', () => {
