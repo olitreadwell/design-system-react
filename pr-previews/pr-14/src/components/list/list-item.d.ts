@@ -28,8 +28,8 @@ interface ListItemBuilderProperties {
  * </>
  *
  * @param children Elements to be wrapped in <li>
- * @param itemClassname Class name to be applied each of the `children` elements (not the <li>)
- * @param className Class name to be applied each of the <li> elements
+ * @param itemClassname Class name to be applied to each of the `children` elements (not the <li>)
+ * @param className Class name to be applied to each of the <li> elements
  * @returns Single nestable JSX element
  */
 export declare function ListItemBuilder({ children, itemClassname, className, }: ListItemBuilderProperties): JSX.Element;
