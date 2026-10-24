@@ -121,3 +121,29 @@ describe('ResponsiveMenu', () => {
     ).toBeInTheDocument();
   });
 });
+
+describe('ResponsiveMenu keyboard operability', () => {
+  it('closes the menu when the focused overlay is activated with Enter', () => {
+    renderWithScope(<ResponsiveMenu links={ExampleLinks} />);
+    const menuToggle = screen.getAllByRole('button')[0];
+    fireEvent.click(menuToggle);
+
+    const overlay = screen.getByLabelText('Close menu');
+    overlay.focus();
+    fireEvent.keyDown(overlay, { key: 'Enter' });
+
+    expect(screen.getByRole('navigation')).not.toHaveClass('open');
+  });
+
+  it('closes the menu when the focused overlay is activated with Space', () => {
+    renderWithScope(<ResponsiveMenu links={ExampleLinks} />);
+    const menuToggle = screen.getAllByRole('button')[0];
+    fireEvent.click(menuToggle);
+
+    const overlay = screen.getByLabelText('Close menu');
+    overlay.focus();
+    fireEvent.keyDown(overlay, { key: ' ' });
+
+    expect(screen.getByRole('navigation')).not.toHaveClass('open');
+  });
+});
