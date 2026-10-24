@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import type { ChangeEvent, ReactElement, ReactNode, RefObject } from 'react';
-import { JSX, useCallback, useEffect, useRef } from 'react';
+import { forwardRef, JSX, useCallback, useEffect, useRef } from 'react';
 import { HelperText } from '../helper-text/helper-text';
 
 import { Label } from '../label/label';
@@ -54,91 +54,101 @@ const borderStatus = {
   error: 'm-form-field--checkbox-error',
 };
 
-export const Checkbox = ({
-  id,
-  label,
-  className,
-  inputClassName,
-  labelClassName = '',
-  checked,
-  defaultChecked,
-  helperText,
-  inputRef,
-  disabled = false,
-  isLarge = false,
-  isLabelInline = true,
-  isIndeterminate = false,
-  name,
-  onChange,
-  status,
-  ...properties
-}: CheckboxProperties & JSX.IntrinsicElements['input']): ReactElement => {
-  const isControlled = checked !== undefined;
-  const internalRef = useRef(null);
-  const ref = inputRef ?? internalRef;
-
-  const onChangeHandler = useCallback(
-    (event: ChangeEvent<HTMLInputElement>): void => {
-      onChange?.(event);
+export const Checkbox = forwardRef<
+  HTMLInputElement,
+  CheckboxProperties & JSX.IntrinsicElements['input']
+>(
+  (
+    {
+      id,
+      label,
+      className,
+      inputClassName,
+      labelClassName = '',
+      checked,
+      defaultChecked,
+      helperText,
+      inputRef,
+      disabled = false,
+      isLarge = false,
+      isLabelInline = true,
+      isIndeterminate = false,
+      name,
+      onChange,
+      status,
+      ...properties
     },
-    [onChange],
-  );
+    forwardedRef,
+  ): ReactElement => {
+    const isControlled = checked !== undefined;
+    const internalRef = useRef(null);
+    const ref = forwardedRef ?? inputRef ?? internalRef;
 
-  const containerClasses = [
-    ...containerBaseStyles,
-    isLarge ? 'm-form-field--lg-target' : '',
-    status ? borderStatus[status] : '',
-    className,
-  ];
+    const onChangeHandler = useCallback(
+      (event: ChangeEvent<HTMLInputElement>): void => {
+        onChange?.(event);
+      },
+      [onChange],
+    );
 
-  const inputProperties = {
-    ...properties,
-    id,
-    type: 'checkbox' as const,
-    'aria-labelledby': `${id}-label`,
-    name: name ?? id,
-    ref: ref,
-    disabled,
-    onChange: onChangeHandler,
-    'data-testid': `${id}-input`,
-    className: classnames(['a-checkbox', inputClassName]),
-  };
+    const containerClasses = [
+      ...containerBaseStyles,
+      isLarge ? 'm-form-field--lg-target' : '',
+      status ? borderStatus[status] : '',
+      className,
+    ];
 
-  if (isControlled) {
-    Object.assign(inputProperties, { checked, 'aria-checked': checked });
-  } else {
-    Object.assign(inputProperties, {
-      defaultChecked: defaultChecked ?? false,
-    });
-  }
+    const inputProperties = {
+      ...properties,
+      id,
+      type: 'checkbox' as const,
+      'aria-labelledby': `${id}-label`,
+      name: name ?? id,
+      ref: ref,
+      disabled,
+      onChange: onChangeHandler,
+      'data-testid': `${id}-input`,
+      className: classnames(['a-checkbox', inputClassName]),
+    };
 
-  if (isIndeterminate) {
-    Object.assign(inputProperties, { 'aria-checked': 'mixed' });
-  }
-
-  useEffect(() => {
-    if (typeof ref === 'object' && ref.current !== null) {
-      ref.current.indeterminate = isIndeterminate
+    if (isControlled) {
+      Object.assign(inputProperties, { checked, 'aria-checked': checked });
+    } else {
+      Object.assign(inputProperties, {
+        defaultChecked: defaultChecked ?? false,
+      });
     }
-  }, [isIndeterminate])
 
-  return (
-    <div
-      className={classnames(containerClasses)}
-      data-testid={`${id}-container`}
-    >
-      <input {...inputProperties} />
-      <Label
-        id={`${id}-label`}
-        className={labelClassName}
-        htmlFor={id}
-        isInline={isLabelInline}
+    if (isIndeterminate) {
+      Object.assign(inputProperties, { 'aria-checked': 'mixed' });
+    }
+
+    useEffect(() => {
+      if (typeof ref === 'object' && ref.current !== null) {
+        ref.current.indeterminate = isIndeterminate;
+      }
+    }, [isIndeterminate]);
+
+    return (
+      <div
+        className={classnames(containerClasses)}
+        data-testid={`${id}-container`}
       >
-        {label}
-        <HelperText>{helperText}</HelperText>
-      </Label>
-    </div>
-  );
-};
+        <input {...inputProperties} />
+        <Label
+          id={`${id}-label`}
+          className={labelClassName}
+          htmlFor={id}
+          isInline={isLabelInline}
+        >
+          {label}
+          <HelperText>{helperText}</HelperText>
+        </Label>
+      </div>
+    );
+  },
+);
+
+Checkbox.displayName = 'Checkbox';
 
 export default Checkbox;
