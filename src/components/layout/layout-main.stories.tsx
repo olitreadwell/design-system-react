@@ -16,8 +16,8 @@ Container for all of the content within a Layout. Used to configure the column s
 
 <ul>
 <li>layout<ul>
-<li>[1-3](https://cfpb.github.io/design-system/development/main-content-and-sidebars#left-hand-sidebar-layout)</li>
-<li>[2-1](https://cfpb.github.io/design-system/development/main-content-and-sidebars#right-hand-sidebar-layout)</li>
+<li>[1-3](https://cfpb.github.io/design-system/development/main-content-and-sidebars#main-content-and-sidebar)</li>
+<li>[2-1](https://cfpb.github.io/design-system/development/main-content-and-sidebars#main-content-and-sidebar)</li>
 </ul></li>
 
 </ul>

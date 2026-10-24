@@ -19,7 +19,7 @@
     "paths": {
       "~/*": ["./*"],
       "@cfpb/cfpb-design-system/src/components/cfpb-expandables": [
-        "./src/types/CfpbExpandables.d.ts"
+        "./src/types/cfpb-expandables.d.ts"
       ]
     }
   },
