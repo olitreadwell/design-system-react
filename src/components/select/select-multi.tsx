@@ -15,7 +15,7 @@ export const SelectMulti = ({
   maxSelections = MAX_SELECTIONS,
   ...properties
 }: SelectProperties): JSX.Element => {
-  const [selectedIndices, setSelectedIndices] = useState<number[]>([]);
+  const [selectedIndices, setSelectedIndicies] = useState<number[]>([]);
   const inputReference = useRef(null);
 
   // Initialize and configure DS Multiselect
@@ -25,7 +25,7 @@ export const SelectMulti = ({
 
     const onUpdate = (): void => {
       const modelSelected = newSelect.getModel().getSelectedIndices();
-      setSelectedIndices([...modelSelected]);
+      setSelectedIndicies([...modelSelected]);
     };
 
     const EVT_SELECT = 'selectionsupdated';
@@ -34,16 +34,27 @@ export const SelectMulti = ({
     return () => newSelect.removeEventListener(EVT_SELECT, onUpdate);
   }, [maxSelections]);
 
+  // Keep the latest props available to the notification effect below without
+  // making them dependencies. A parent that passes an inline `options` array or
+  // `onChange` callback (the usual controlled-component idiom) would otherwise
+  // give that effect a new dependency on every render and loop forever.
+  const optionsReference = useRef(options);
+  const onChangeReference = useRef(onChange);
+  useEffect(() => {
+    optionsReference.current = options;
+    onChangeReference.current = onChange;
+  });
+
   // Notify parent on change of selected options
   useEffect(() => {
     // Map our simplified tracking state to actual Option objects
     const selectedValues = selectedIndices.map((index) => ({
-      ...options[index],
+      ...optionsReference.current[index],
       selected: true,
     }));
 
-    onChange(selectedValues);
-  }, [selectedIndices, onChange, options]);
+    onChangeReference.current(selectedValues);
+  }, [selectedIndices]);
 
   return (
     <div className='m-form-field' id={`multi-wrapper-${id}`}>
