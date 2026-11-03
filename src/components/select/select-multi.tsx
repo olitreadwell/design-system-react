@@ -34,16 +34,27 @@ export const SelectMulti = ({
     return () => newSelect.removeEventListener(EVT_SELECT, onUpdate);
   }, [maxSelections]);
 
+  // Keep the latest props available to the notification effect below without
+  // making them dependencies. A parent that passes an inline `options` array or
+  // `onChange` callback (the usual controlled-component idiom) would otherwise
+  // give that effect a new dependency on every render and loop forever.
+  const optionsReference = useRef(options);
+  const onChangeReference = useRef(onChange);
+  useEffect(() => {
+    optionsReference.current = options;
+    onChangeReference.current = onChange;
+  });
+
   // Notify parent on change of selected options
   useEffect(() => {
     // Map our simplified tracking state to actual Option objects
     const selectedValues = selectedIndicies.map((index) => ({
-      ...options[index],
+      ...optionsReference.current[index],
       selected: true,
     }));
 
-    onChange(selectedValues);
-  }, [selectedIndicies, onChange, options]);
+    onChangeReference.current(selectedValues);
+  }, [selectedIndicies]);
 
   return (
     <div className='m-form-field' id={`multi-wrapper-${id}`}>
