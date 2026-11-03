@@ -42,7 +42,7 @@ describe('Checkbox', () => {
 
     expect(onChange).toHaveBeenCalled();
 
-    // Accessbility attributes updated
+    // Accessibility attributes updated
     expect(checkbox.getAttribute(attributeAria)).toMatch('true');
   });
 

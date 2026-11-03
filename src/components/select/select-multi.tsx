@@ -15,7 +15,7 @@ export const SelectMulti = ({
   maxSelections = MAX_SELECTIONS,
   ...properties
 }: SelectProperties): JSX.Element => {
-  const [selectedIndicies, setSelectedIndicies] = useState<number[]>([]);
+  const [selectedIndices, setSelectedIndicies] = useState<number[]>([]);
   const inputReference = useRef(null);
 
   // Initialize and configure DS Multiselect
@@ -48,13 +48,13 @@ export const SelectMulti = ({
   // Notify parent on change of selected options
   useEffect(() => {
     // Map our simplified tracking state to actual Option objects
-    const selectedValues = selectedIndicies.map((index) => ({
+    const selectedValues = selectedIndices.map((index) => ({
       ...optionsReference.current[index],
       selected: true,
     }));
 
     onChangeReference.current(selectedValues);
-  }, [selectedIndicies]);
+  }, [selectedIndices]);
 
   return (
     <div className='m-form-field' id={`multi-wrapper-${id}`}>

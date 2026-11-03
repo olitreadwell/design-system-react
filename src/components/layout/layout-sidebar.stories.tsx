@@ -14,9 +14,9 @@ const meta: Meta<typeof Layout.Sidebar> = {
 Container for the sidebar content within a layout.
 
 <ul>
-<li>[flushBottom](https://cfpb.github.io/design-system/development/main-content-and-sidebars#flush-bottom-modifier)</li>
-<li>[flushTopOnSmall](https://cfpb.github.io/design-system/development/main-content-and-sidebars#flush-top-modifier-only-on-small-screens)</li>
-<li>[flushAllOnSmall](https://cfpb.github.io/design-system/development/main-content-and-sidebars#flush-all-modifier-only-on-small-screens)</li>
+<li>[flushBottom](https://cfpb.github.io/design-system/development/main-content-and-sidebars#modifiers)</li>
+<li>[flushTopOnSmall](https://cfpb.github.io/design-system/development/main-content-and-sidebars#modifiers)</li>
+<li>[flushAllOnSmall](https://cfpb.github.io/design-system/development/main-content-and-sidebars#modifiers)</li>
 </ul>
 
 Source: https://cfpb.github.io/design-system/development/main-content-and-sidebars

@@ -36,7 +36,7 @@ export interface CheckboxProperties {
   isLabelInline?: boolean;
   /** Apply indeterminate attribute to checkbox? */
   isIndeterminate?: boolean
-  /** A name for this checkbox's value that can be referenced in javascript */
+  /** A name for this checkbox's value that can be referenced in JavaScript */
   name?: string;
   /** Is this checkbox disabled? */
   disabled?: boolean;

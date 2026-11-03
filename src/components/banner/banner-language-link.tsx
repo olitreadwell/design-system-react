@@ -12,7 +12,7 @@ export const LanguageMap: LanguageDefinition = {
   vi: { label: 'Tiếng Việt', code: 'vi' },
   ko: { label: '한국어', code: 'ko' },
   tl: { label: 'Tagalog', code: 'tl' },
-  ru: { label: 'Pусский', code: 'ru' },
+  ru: { label: 'Русский', code: 'ru' },
   ar: { label: 'العربية', code: 'ar' },
   ht: { label: 'Kreyòl Ayisyen', code: 'ht' },
 };
